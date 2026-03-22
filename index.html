@@ -100,6 +100,8 @@
 
     .contact-fab-btn svg {
       width: 22px;
+      height: 22px;
+      flex-shrink: 0;
       stroke: var(--c-bg);
     }
 
@@ -540,6 +542,8 @@
 
     .hero-cta svg {
       width: 14px;
+      height: 14px;
+      flex-shrink: 0;
       transition: transform 0.3s;
     }
 
@@ -874,6 +878,76 @@
     .team-name {
       color: var(--c-brown) !important;
     }
+
+    /* --- ANIMATIONS --- */
+    @media (prefers-reduced-motion: no-preference) {
+      /* Hero background zooom */
+      @keyframes heroZoom {
+        0%, 100% { background-size: 100% auto; }
+        50% { background-size: 108% auto; }
+      }
+      .hero {
+        animation: heroZoom 16s ease-in-out infinite;
+      }
+      @media (max-width: 768px) {
+        @keyframes heroZoomMobile {
+          0%, 100% { background-size: auto 100%; }
+          50% { background-size: auto 108%; }
+        }
+        .hero {
+          animation: heroZoomMobile 16s ease-in-out infinite;
+        }
+      }
+
+      /* Hero text fade in */
+      @keyframes slideUpFade {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .hero-eyebrow, .hero-title, .hero-desc, .hero-cta {
+        opacity: 0;
+        animation: slideUpFade 0.8s ease-out forwards;
+      }
+      .hero-eyebrow { animation-delay: 0.5s; }
+      .hero-title { animation-delay: 0.9s; }
+      .hero-desc { animation-delay: 1.3s; }
+      .hero-cta { animation-delay: 1.7s; }
+
+      /* Nav logo shimmer */
+      @keyframes goldShimmer {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      .nav-logo {
+        background: linear-gradient(90deg, var(--c-dark) 20%, var(--c-brown) 50%, var(--c-dark) 80%);
+        background-size: 200% auto;
+        color: transparent !important;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: goldShimmer 4s ease-in-out 1 forwards;
+        animation-delay: 0.2s;
+      }
+
+      /* Menu scroll slide up */
+      .menu-item.scroll-anim {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      .menu-item.scroll-anim.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Feature items hover glow */
+      .feature-item {
+        transition: background 0.3s, box-shadow 0.4s ease-out;
+      }
+      .feature-item:hover {
+        background: var(--c-cream);
+        box-shadow: inset 0 0 40px rgba(200, 146, 42, 0.08);
+      }
+    }
+
   </style>
 </head>
 
@@ -899,7 +973,7 @@
         <p class="hero-desc">Handcrafted brownies & cheesecakes. Made with obsession.</p>
         <a class="hero-cta" onclick="showPage('menu')">
           Explore the Menu
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px; height:14px; flex-shrink:0; display:block;">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
@@ -1159,21 +1233,21 @@
       <p class="sub">We'd love to hear from you</p>
 
       <div class="contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px; height:16px; flex-shrink:0; display:block;">
           <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
         12, Church Street, Indiranagar, Bengaluru
       </div>
       <div class="contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px; height:16px; flex-shrink:0; display:block;">
           <path
             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
         <a href="tel:+918001234567">+91 80 0123 4567</a>
       </div>
       <div class="contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px; height:16px; flex-shrink:0; display:block;">
           <path
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
@@ -1183,7 +1257,7 @@
       <div class="contact-divider"></div>
 
       <div class="contact-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px; height:16px; flex-shrink:0; display:block;">
           <circle cx="12" cy="12" r="10" />
           <path d="M12 6v6l4 2" />
         </svg>
@@ -1195,7 +1269,7 @@
     </div>
 
     <button class="contact-fab-btn" id="contactBtn" onclick="toggleContact()" title="Contact us">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px; height:22px; flex-shrink:0; display:block;">
         <path
           d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
       </svg>
@@ -1227,6 +1301,26 @@
     document.addEventListener('click', e => {
       if (!e.target.closest('.contact-fab')) closeContact();
     });
+
+    /* ── SCROLL ANIMATIONS ── */
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.menu-item').forEach(el => {
+          el.classList.add('scroll-anim');
+          observer.observe(el);
+        });
+      }
+    });
+
   </script>
 </body>
 
