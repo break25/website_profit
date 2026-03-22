@@ -7,7 +7,7 @@
   <title>The Brownie Loft · A Café & Bakery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital@1&display=swap"
     rel="stylesheet">
   <style>
     /* ── CONFIG: change these to rebrand instantly ── */
@@ -21,8 +21,8 @@
       --c-dark: #F5ECD7;
       --c-muted: #D4C4A8;
       --c-white: #2C1A12;
-      --font-display: 'Playfair Display', serif;
-      --font-body: 'Inter', sans-serif;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
       --radius: 2px;
       --nav-h: 68px;
     }
@@ -41,7 +41,7 @@
     .footer-logo {
       font-family: var(--font-display);
       font-size: 1.4rem;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--c-brown);
     }
 
@@ -122,6 +122,7 @@
 
     .contact-panel h4 {
       font-family: var(--font-display);
+      font-weight: 300;
       font-size: 1.1rem;
       color: var(--c-brown);
       margin-bottom: 0.3rem;
@@ -204,6 +205,7 @@
 
     .about-art {
       font-family: var(--font-display);
+      font-weight: 300;
       font-size: 1.8rem;
       font-style: italic;
       color: var(--c-brown);
@@ -302,12 +304,14 @@
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
+      font-weight: 300;
       font-size: 1.4rem;
       font-style: italic;
     }
 
     .team-name {
       font-family: var(--font-display);
+      font-weight: 300;
       font-size: 1rem;
       color: var(--c-dark);
     }
@@ -395,7 +399,7 @@
     .nav-logo {
       font-family: var(--font-display);
       font-size: 1.7rem;
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 0.08em;
       color: var(--c-dark);
       cursor: pointer;
@@ -493,7 +497,7 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
       font-weight: 300;
       line-height: 1.05;
       color: var(--c-dark);
@@ -584,6 +588,7 @@
 
     .hero-big-glyph {
       font-family: var(--font-display);
+      font-weight: 300;
       font-size: min(22vw, 200px);
       color: rgba(122, 92, 62, 0.12);
       line-height: 1;
@@ -606,6 +611,7 @@
       justify-content: center;
       gap: 2px;
       font-family: var(--font-display);
+      font-weight: 300;
       animation: badge-spin 18s linear infinite;
     }
 
@@ -771,7 +777,7 @@
     .menu-section-head h3 {
       font-family: var(--font-display);
       font-size: 1.8rem;
-      font-weight: 400;
+      font-weight: 300;
       font-style: italic;
       color: var(--c-brown);
       white-space: nowrap;
@@ -986,11 +992,7 @@
       align-items: center;
       gap: 0.4rem;
     }
-    .menu-item-price::after {
-      content: '—';
-      color: #C8922A;
-      opacity: 0.5;
-    }
+
 
     @media (prefers-reduced-motion: no-preference) {
       @keyframes goldPulse {
