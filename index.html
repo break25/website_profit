@@ -7,7 +7,7 @@
   <title>The Brownie Loft · A Café & Bakery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
   <style>
     /* ── CONFIG: change these to rebrand instantly ── */
@@ -656,42 +656,61 @@
     /* ── FEATURE STRIP (homepage) ── */
     .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--c-parchment);
-      border-bottom: 1px solid var(--c-parchment);
+      grid-template-columns: 1.4fr 0.9fr 1.1fr;
+      background: #1C0F0A;
+      border-top: 1px solid #3D2314;
+      border-bottom: 1px solid #3D2314;
     }
 
     .feature-item {
-      padding: 3.5rem 3vw;
-      border-right: 1px solid var(--c-parchment);
-      transition: background 0.3s;
+      position: relative;
+      padding: 4rem 3vw;
+      border-right: 1px solid #C8922A;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
     }
 
     .feature-item:last-child {
       border-right: none;
     }
 
-    .feature-item:hover {
-      background: var(--c-cream);
+    .feature-num {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem;
+      font-style: italic;
+      font-weight: 400;
+      color: #F5ECD7;
+      opacity: 0.06;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .feature-icon {
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
+    .feature-content {
+      position: relative;
+      z-index: 1;
     }
 
     .feature-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
       font-weight: 400;
-      margin-bottom: 0.6rem;
-      color: var(--c-dark);
+      font-size: 1.3rem;
+      color: #C8922A;
+      margin-bottom: 0.4rem;
     }
 
     .feature-text {
-      font-size: 0.85rem;
-      color: var(--c-muted);
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: #D4C4A8;
+      line-height: 1.6;
     }
 
     /* ── QUOTE BAND ── */
@@ -938,14 +957,7 @@
         transform: translateY(0);
       }
 
-      /* Feature items hover glow */
-      .feature-item {
-        transition: background 0.3s, box-shadow 0.4s ease-out;
-      }
-      .feature-item:hover {
-        background: var(--c-cream);
-        box-shadow: inset 0 0 40px rgba(200, 146, 42, 0.08);
-      }
+      /* Feature items hover glow removed */
     }
 
   </style>
@@ -983,20 +995,25 @@
 
     <section class="features">
       <div class="feature-item">
-        <div class="feature-icon">🌾</div>
-        <div class="feature-title">Sourced Locally</div>
-        <p class="feature-text">Every ingredient comes from farms within 80 km of our kitchen. Seasonal menus change
-          weekly.</p>
+        <div class="feature-num">01</div>
+        <div class="feature-content">
+          <div class="feature-title">we source our chocolate obsessively</div>
+          <p class="feature-text">single origin Valrhona and Callebaut, never compound</p>
+        </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">☕</div>
-        <div class="feature-title">Single-Origin Coffee</div>
-        <p class="feature-text">Rotating beans from Coorg, Araku, and beyond — roasted fresh every Tuesday.</p>
+        <div class="feature-num">02</div>
+        <div class="feature-content">
+          <div class="feature-title">every brownie is made from scratch</div>
+          <p class="feature-text">no premix, no shortcuts, baked fresh every morning</p>
+        </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🍞</div>
-        <div class="feature-title">Slow Fermented Bread</div>
-        <p class="feature-text">72-hour sourdoughs, rye loaves, and laminated croissants made before the sun rises.</p>
+        <div class="feature-num">03</div>
+        <div class="feature-content">
+          <div class="feature-title">cheesecake that sits overnight</div>
+          <p class="feature-text">24-hour set, never rushed, never frozen</p>
+        </div>
       </div>
     </section>
 
